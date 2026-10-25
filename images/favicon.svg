@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Simple burger icon: bun, cheese, patty, bottom bun -->
+  <circle cx="32" cy="32" r="31" fill="#e4202b" stroke="#1d1a17" stroke-width="2"/>
+  <path d="M14 30c0-10 8-16 18-16s18 6 18 16z" fill="#ffc72c" stroke="#1d1a17" stroke-width="2.5"/>
+  <path d="M13 34h38l-5 5-5-5-5 5-5-5-5 5-5-5-5 5z" fill="#ffe066" stroke="#1d1a17" stroke-width="2"/>
+  <rect x="13" y="38" width="38" height="6" rx="3" fill="#6b3a1e" stroke="#1d1a17" stroke-width="2.5"/>
+  <path d="M14 46h36c0 4-3 6-7 6H21c-4 0-7-2-7-6z" fill="#ffc72c" stroke="#1d1a17" stroke-width="2.5"/>
+  <circle cx="26" cy="22" r="1.4" fill="#fff8e7"/><circle cx="34" cy="19" r="1.4" fill="#fff8e7"/><circle cx="40" cy="24" r="1.4" fill="#fff8e7"/>
+</svg>
