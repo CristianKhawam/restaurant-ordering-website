@@ -1,14 +1,4 @@
-/* =========================================================
-   maze.js — "Play & Save" maze game
-   - The user picks a size (5–15); the form is validated
-   - A random maze is generated with the "recursive backtracker"
-     (depth-first search) algorithm. Because it connects every
-     cell, there is ALWAYS a path from the start to the exit.
-   - The player moves with arrow keys / WASD, clicks or the pad
-   - Each level (MAZE_LEVELS in common.js) limits moves and time;
-     the limits come from the length of the shortest path
-   - Reaching the exit in time saves that level's voucher code
-   ========================================================= */
+// Maze game: reach the exit before running out of moves or time to win a voucher code.
 
 const MIN_MAZE_SIZE = MAZE_LEVELS[0].minSize;
 const MAX_MAZE_SIZE = MAZE_LEVELS[MAZE_LEVELS.length - 1].maxSize;

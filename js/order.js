@@ -1,15 +1,5 @@
-/* =========================================================
-   order.js — ordering page
-   - Builds the menu from MENU_ITEMS
-   - Validates quantities (whole numbers 0–20)
-   - Updates the total in real time
-   - Applies voucher codes (discount before taxes)
-   - Generates an itemized receipt and "Download PDF" via print
-   - Saves the order in localStorage so a refresh keeps it
-
-   All money is handled in CENTS (whole numbers) to avoid
-   floating-point errors such as 0.1 + 0.2 = 0.30000000000000004.
-   ========================================================= */
+// Order page: builds the menu, updates the total, applies vouchers and makes the receipt.
+// Prices are stored in cents (whole numbers) so we avoid errors like 0.1 + 0.2 = 0.30000000000000004.
 
 const MIN_QUANTITY = 0;
 const MAX_QUANTITY = 20;
@@ -77,8 +67,6 @@ function createMenuCard(item) {
   imageWrapper.className = "menu-card-image";
   const image = document.createElement("img");
   image.alt = item.name;
-  image.loading = "lazy";
-  useImageFallback(image);
   image.src = item.image;
   imageWrapper.append(image);
 
@@ -350,13 +338,9 @@ function handleSubmit(event) {
   receiptElement.focus({ preventScroll: true });
 }
 
-// "Download PDF" uses the browser's print dialog ("Save as PDF").
-// The print stylesheet hides everything except the receipt, and the
-// page title becomes the suggested file name.
+// "Download PDF" opens the print window, where the user picks "Save as PDF".
+// The @media print styles hide everything except the receipt.
 function downloadReceiptPdf() {
-  const originalTitle = document.title;
-  document.title = `Hero-Burger-Receipt-${currentReceiptInfo.number}`;
-  window.addEventListener("afterprint", () => (document.title = originalTitle), { once: true });
   window.print();
 }
 
@@ -424,7 +408,7 @@ function clearOrder() {
     getQuantityInput(item.id).value = "0";
   });
   removeVoucher(); // also calls handleOrderChanged()
-  removeFromStorage(STORAGE_KEYS.order);
+  localStorage.removeItem(STORAGE_KEYS.order);
 }
 
 /* ---------- Events ---------- */

@@ -1,9 +1,5 @@
-/* =========================================================
-   carousel.js — landing page image carousel
-   - Slides and dots are generated from the SLIDES array
-   - Auto-advances every 4 seconds unless paused
-   - Arrows, dots and keyboard arrows change the slide manually
-   ========================================================= */
+// Image carousel on the home page. It changes slide every 4 seconds
+// unless it is paused, and the arrows and dots change it by hand.
 
 const AUTOPLAY_DELAY_MS = 4000;
 
@@ -40,9 +36,6 @@ function buildSlides() {
 
     const image = document.createElement("img");
     image.alt = slide.alt;
-    // Only the first image loads immediately; the rest load lazily
-    image.loading = index === 0 ? "eager" : "lazy";
-    useImageFallback(image); // attach the fallback before setting src
     image.src = slide.file;
 
     const caption = document.createElement("figcaption");
